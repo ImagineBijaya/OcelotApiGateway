@@ -8,17 +8,15 @@ namespace ProductService.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-      
-        private readonly IProductRepository _productRepository;
+       
+
+        private readonly  IProductRepository _productRepository;
 
         public ProductController(IProductRepository productRepository)
         {
-            this._productRepository = productRepository;
+            _productRepository = productRepository;
         }
 
-        public ProductController()
-        {
-        }
 
         [HttpGet("getproductlist")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()

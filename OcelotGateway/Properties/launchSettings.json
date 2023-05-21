@@ -11,7 +11,8 @@
     "OcelotGateway": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": false,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7248",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

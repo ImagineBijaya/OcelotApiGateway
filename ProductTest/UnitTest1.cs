@@ -7,15 +7,24 @@ namespace ProductTest
     [TestClass]
     public class ProductTest
     {
+
+        private readonly ProductController productController;
+        private readonly IProductRepository productRepository;
+        private readonly ProductDbContext productDbContext = new ProductDbContext();
+        public ProductTest()
+        {
+            productRepository = new ProductRepository(productDbContext);
+            productController = new ProductController(productRepository);
+        }
         [TestMethod]
         public async Task  ProductPricelessthanZeroAsync()
         {
+            
             Product newProduct= new Product();
             newProduct.ProductName = "Nescafe Coffee";
             newProduct.ProductUnit = "kg";
-            newProduct.ProductPrice = "1300";
-         
-            ProductController productController = new ProductController();
+            newProduct.ProductPrice = "-1300";
+
             try
             {
                var result = await productController.AddProductAsync(newProduct);

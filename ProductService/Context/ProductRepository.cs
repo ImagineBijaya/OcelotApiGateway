@@ -8,10 +8,10 @@ namespace ProductService.Context
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly ProductDbContext _productDbContext;
+        ProductDbContext _productDbContext;
         public ProductRepository(ProductDbContext productDbContext)
         {
-         productDbContext = productDbContext;
+            _productDbContext = productDbContext;
         }
 
 
@@ -35,9 +35,11 @@ namespace ProductService.Context
         }
 
         public async Task<Product> GetProductByIdAsync(int Id)
+
         {
-            return await _productDbContext.Products
-                  .FirstOrDefaultAsync(e => e.ProductId == Id);
+            var result = await _productDbContext.Products
+                .FirstOrDefaultAsync(e => e.ProductId == Id);
+            return result;
         }
 
         public async Task<IEnumerable<Product>> GetProductListAsync()
@@ -62,7 +64,7 @@ namespace ProductService.Context
                 return result;
             }
 
-            return null;
+            return null; ;
         }
     }
 }

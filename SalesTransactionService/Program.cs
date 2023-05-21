@@ -11,6 +11,9 @@ builder.Services.AddDbContext<SalesTransactionDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 builder.Services.AddControllers();
+builder.Services.AddScoped<ISalesTransactionRepository, SalesTransactionRepository>();
+
+builder.Services.AddDbContext<SalesTransactionDbContext>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

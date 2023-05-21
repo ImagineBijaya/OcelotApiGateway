@@ -12,6 +12,10 @@ builder.Services.AddDbContext<CustomerDbContext>(options =>
 });
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+builder.Services.AddDbContext<CustomerDbContext>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
