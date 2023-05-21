@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "yrlTIZLGaU8ULQKb9bNDg/6wttx81cHq2gmCF+cwRYE=",
+  "Source": "SalesTransactionService",
+  "BasePath": "_content/SalesTransactionService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
