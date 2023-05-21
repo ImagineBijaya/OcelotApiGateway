@@ -5,13 +5,13 @@ using Ocelot.Cache.CacheManager;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-var app = builder.Build();
 
 builder.Services.AddOcelot(builder.Configuration).AddCacheManager(x =>
 {
     x.WithDictionaryHandle();
 });
 builder.Services.AddSwaggerForOcelot(builder.Configuration);
+var app = builder.Build();
 
 
 if (app.Environment.IsDevelopment())
